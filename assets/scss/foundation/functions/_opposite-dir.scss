@@ -1,0 +1,10 @@
+$direction-map: (
+  top: bottom,
+  right: left,
+  bottom: top,
+  left: right
+);
+
+@function _opposite-dir($direction) {
+  @return map-get($direction-map, $direction);
+}

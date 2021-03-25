@@ -1,0 +1,64 @@
+.u-block-sp {
+  display: block;
+  @include media(pc) {
+    display: none;
+  }
+}
+
+.u-block-pc {
+  display: none;
+  @include media(pc) {
+    display: block;
+  }
+}
+
+.u-full {
+  width: 100%;
+}
+
+.u-font-small-sp {
+  @include font-vw(20, $size-sp);
+
+  @include media(pc) {
+    font-size: inherit;
+  }
+}
+
+// vue側に 「u-」 プレフィックスを入れると動かなかったのでデフォルトの
+// name="fade" に対してスタイル適用してます。
+.fade {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.1s linear;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.u-before-modal-opened {
+  transition: opacity 0.5s linear;
+  .is-modal-opened & {
+    opacity: 0;
+  }
+}
+
+.is-menu-opened {
+  overflow: hidden;
+
+  @include media(pc) {
+    overflow: initial;
+  }
+}
+
+.is-modal-opened {
+  overflow: hidden;
+}
+
+.is-floating,
+.is-opening {
+  @include position(fixed, $top: 0, $left: 0);
+  width: 100%;
+}

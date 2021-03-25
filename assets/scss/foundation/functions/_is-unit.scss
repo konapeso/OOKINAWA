@@ -1,0 +1,7 @@
+@function _is-unit($val) {
+  @if (type-of($val) == string) {
+    @return $val == auto or str-slice($val, 1, 4) == calc;
+  }
+  @return _is-number($val) and
+    index('px' 'rem' 'em' 'ex' 'in' '%' 'vw' 'vh' 'vmin' 'vmax', unit($val));
+}

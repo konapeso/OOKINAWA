@@ -1,0 +1,19 @@
+// ------------------------------------------
+// @example
+//  @include position($left: 10px);
+//  @include position(absolute, $top: 10px);
+//  @include position(fixed, $top: 0, $left: 0);
+// ------------------------------------------
+@mixin position(
+  $position: relative,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

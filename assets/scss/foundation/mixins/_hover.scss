@@ -1,0 +1,113 @@
+@mixin hover-link($duration: 0.4s, $pseudo: before) {
+  @include media(desktop) {
+    @include pseudo($pseudo) {
+      @content;
+      background-color: yellow;
+      z-index: -1;
+      transition: transform #{$duration} $ease-out-cubic;
+      transform: scaleX(0);
+      transform-origin: right top;
+    }
+  }
+  &:hover {
+    @include pseudo($pseudo) {
+      transform: scaleX(1);
+      transform-origin: left top;
+    }
+  }
+}
+
+@mixin hover-button() {
+  overflow: hidden;
+  position: relative;
+
+  > span {
+    position: relative;
+    letter-spacing: -1px;
+    pointer-events: none;
+
+    .char {
+      position: relative;
+      display: inline-block;
+      transition: transform 0.6s $ease-out-back, opacity 0.6s;
+      backface-visibility: hidden;
+    }
+
+    &:nth-child(1) {
+      color: black;
+      z-index: 1;
+      display: block;
+      @include center-translate();
+      .char {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    }
+    &:nth-child(2) {
+      color: white;
+      .char {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  @include pseudo(after) {
+    @include position(absolute, $bottom: 0, $left: 0);
+    @include size(100%);
+    background-color: white;
+    transform: scaleY(0) translateY(0);
+    transition: transform 0.45s $ease-in-out-sine;
+    transform-origin: bottom center;
+  }
+
+  &.is-enter {
+    > span {
+      &:nth-child(1) {
+        .char {
+          opacity: 1;
+          transform: translateY(0);
+          $wait: 0.25s;
+          @for $i from 1 through 20 {
+            &:nth-child(#{$i}) {
+              transition-delay: $wait + 0.05s * ($i - 1);
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        .char {
+          opacity: 0;
+        }
+      }
+    }
+    @include pseudo(after) {
+      transform: scaleY(1) translateY(0);
+      transform-origin: bottom center;
+    }
+  }
+
+  &.is-leave {
+    > span {
+      &:nth-child(1) {
+        .char {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition-delay: 0s !important;
+        }
+      }
+      &:nth-child(2) {
+        .char {
+          opacity: 1;
+          transform: none;
+          transition: none;
+          transition-delay: 0s;
+        }
+      }
+    }
+    @include pseudo(after) {
+      transform: scaleY(0) translateY(0);
+      transform-origin: top center;
+    }
+  }
+}

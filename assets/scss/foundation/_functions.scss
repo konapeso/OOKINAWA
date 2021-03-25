@@ -1,0 +1,11 @@
+// functionをインポート
+// トランスパイラでは読み込み順序は問題なさそうなので、
+// アルファベッド順に読み込んでます。
+@import 'functions/_add-pixel.scss';
+@import 'functions/_half-px.scss';
+@import 'functions/_is-number.scss';
+@import 'functions/_is-unit.scss';
+@import 'functions/_opposite-dir.scss';
+@import 'functions/_percentage.scss';
+@import 'functions/_remove-unit.scss';
+@import 'functions/_vw.scss';

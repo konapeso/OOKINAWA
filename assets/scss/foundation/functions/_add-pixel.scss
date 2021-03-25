@@ -1,0 +1,7 @@
+@function _add-pixel($val) {
+  @if _is-unit($val) {
+    @return $val;
+  } @else {
+    @return 1px * $val;
+  }
+}

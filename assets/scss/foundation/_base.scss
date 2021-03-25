@@ -1,0 +1,57 @@
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  overflow-y: scroll;
+  font-family: $font-family;
+  @include line-height(40, 24);
+  @include font-smooth();
+  font-feature-settings: "palt";
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+  line-height: 0;
+}
+
+button {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+// ボタンのフォーカスを非表示にする。
+button:focus:not(.focus-visible) {
+  outline: none;
+}
+
+picture {
+  display: block;
+}
+
+ul,
+ol,
+dl {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+}

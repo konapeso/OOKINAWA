@@ -1,0 +1,10 @@
+// ------------------------------------------
+// @example
+//  @include size(100%);
+//  @include size(10px);
+//  @include size(100%, 20%);
+// ------------------------------------------
+@mixin size($width, $height: $width) {
+  width: _add-pixel($width);
+  height: _add-pixel($height);
+}

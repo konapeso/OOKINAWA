@@ -1,0 +1,7 @@
+@mixin font-vw($size, $vw: 375) {
+  font-size: _vw($size, $vw);
+}
+
+@mixin font-rem($size) {
+  font-size: ($size / 10) * 1rem;
+}

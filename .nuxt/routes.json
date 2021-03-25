@@ -1,0 +1,15 @@
+[
+  {
+    "name": "icons-list",
+    "path": "/_icons",
+    "component": "/Users/dots134/Development/OOKINAWA/.nuxt/nuxt-svg-sprite-icons-list.vue",
+    "_name": "_9aad4e56"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/dots134/Development/OOKINAWA/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_cc323cb4"
+  }
+]

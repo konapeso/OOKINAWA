@@ -1,0 +1,30 @@
+// font settings
+$base-font-size: 62.5%;
+$font-family: "游ゴシック体", YuGothic, "游ゴシック", Yu Gothic, Hiragino Kaku Gothic Pro, Meiryo, Osaka, MS PGothic,
+  sans-serif;
+
+// size
+$size-sp: 750;
+$size-pc: 1940;
+$size-modal-pc: 1700;
+
+// breakpoints
+$breakpoints: (
+  "pc": "only screen and (min-width: 768px)",
+  "large": "only screen and (min-width: 1480px)",
+  "lmodal": "only screen and (min-width: 1700px)",
+  "xl": "only screen and (min-width: 1940px)",
+) !default;
+
+// color
+$color-gray: #707070;
+$color-gray-border: #dedede;
+$color-light-gray: #f9f9f9;
+
+$color-blue: #7cc5e7;
+$color-yellow: #ffdd00;
+$color-yellow-output: #ebf357;
+$color-orange: #f94c1a;
+$color-gray-1: #d0d0d0;
+$color-sns: #90949e;
+$color-sns-hover: lighten($color-sns, 15%);

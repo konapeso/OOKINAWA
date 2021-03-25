@@ -1,0 +1,28 @@
+@mixin center($width: null, $max: true) {
+  @if ($width) {
+    width: _add-pixel($width);
+  }
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin center-flex($justify: center, $align: center) {
+  display: flex;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+}
+
+@mixin center-translate($horizontal: true, $vertical: true) {
+  $x: if($horizontal, 50%, null);
+  $y: if($vertical, 50%, null);
+  @include position(absolute, $top: $y, $left: $x);
+
+  @if $x or $y {
+    transform: translate(if($x, $x * -1, 0), if($y, $y * -1, 0));
+  }
+}

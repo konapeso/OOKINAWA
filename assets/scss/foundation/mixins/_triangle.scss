@@ -1,0 +1,28 @@
+// @example
+//  @include triangle(top, 100px, (#000 #00f))
+//  @include triangle(left, (100px 200px), #f00)
+@mixin triangle($direction, $size: 10px, $color: black) {
+  $triangle-map: (
+    top: right left bottom,
+    right: top bottom left,
+    bottom: right left top,
+    left: bottom right top
+  );
+
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+  $foreground-color: nth($color, 1);
+  $background-color: if(length($color) == 2, nth($color, 2), transparent);
+  $opposite: _opposite-dir($direction);
+
+  @each $val in map-get($triangle-map, $direction) {
+    @if $val == $opposite {
+      border-#{$val}: $height solid $foreground-color;
+    } @else {
+      border-#{$val}: $width solid $background-color;
+    }
+  }
+
+  font-size: 0;
+  @include size(0);
+}

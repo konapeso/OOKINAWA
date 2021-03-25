@@ -1,0 +1,7 @@
+@function _percentage($val...) {
+  @if length($val) == 1 {
+    @return percentage(nth($val, 1));
+  } @else {
+    @return percentage(nth($val, 1) / nth($val, 2));
+  }
+}

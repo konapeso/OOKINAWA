@@ -1,0 +1,11 @@
+@mixin lock-screen() {
+  html.is-locked {
+    overflow: hidden;
+    // htmlとbodyが100%の時にはheightをautoへ
+    height: auto;
+    body {
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+  }
+}

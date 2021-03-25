@@ -1,0 +1,115 @@
+@keyframes view {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotate(0deg) translateY(-3%);
+  }
+  to {
+    transform: rotate(360deg) translateY(-3%);
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotate(0deg) translateY(1.5%);
+  }
+  to {
+    transform: rotate(-360deg) translateY(1.5%);
+  }
+}
+
+@keyframes rotate3 {
+  from {
+    transform: rotate(0deg) translate(3%, 10%);
+  }
+  to {
+    transform: rotate(-360deg) translate(3%, 10%);
+  }
+}
+
+@keyframes rotate4 {
+  from {
+    transform: rotate(0deg) translate(3%, -10%);
+  }
+  to {
+    transform: rotate(360deg) translate(3%, -10%);
+  }
+}
+
+@keyframes rotate5 {
+  from {
+    transform: rotate(0deg) translate(4%, -5%);
+  }
+  to {
+    transform: rotate(360deg) translate(4%, -5%);
+  }
+}
+
+@keyframes rotate6 {
+  from {
+    transform: rotate(0deg) translate(3%, 5%);
+  }
+  to {
+    transform: rotate(360deg) translate(3%, 5%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0, 0);
+  }
+  18% {
+    transform: scale(1, 1);
+  }
+  20% {
+    transform: scale(1.03, 1.03);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(12px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

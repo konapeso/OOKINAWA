@@ -1,0 +1,3 @@
+@function _vw($val, $viewport: 375) {
+  @return _remove-unit(_percentage($val, $viewport)) * 1vw;
+}
